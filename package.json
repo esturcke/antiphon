@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.15.2",
     "flow-bin": "^0.43.1",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
