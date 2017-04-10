@@ -1,15 +1,8 @@
 [ignore]
-.*/styled-components/src/test/utils.js
-.*/styled-components/flow-typed/npm/express_v4.x.x.js
+.*/node_modules/styled-components/.*
 
 [include]
 
 [libs]
-node_modules/styled-components/flow-typed/danger_v0.x.x.js
-node_modules/styled-components/flow-typed/react-native.js
-node_modules/styled-components/flow-typed/glamor_vx.x.x.js
-node_modules/styled-components/flow-typed/lodash_v4.x.x.js
-node_modules/styled-components/flow-typed/inline-style-prefixer_vx.x.x.js
 
 [options]
-unsafe.enable_getters_and_setters=true
