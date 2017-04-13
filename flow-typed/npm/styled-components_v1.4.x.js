@@ -3,43 +3,32 @@
 
 // @flow
 
-declare module "styled-components" {
-  declare type Interpolation =
-    | ((executionContext: Object) => string)
-    | string
-    | number;
-  declare type NameGenerator = (hash: number) => string;
+declare module 'styled-components' {
+  declare type Interpolation = ((executionContext: Object) => string) | string | number;
+  declare type NameGenerator = (hash: number) => string
 
   declare type StyledComponent = (
     strings: Array<string>,
     ...interpolations: Array<Interpolation>
   ) => ReactClass<*>;
 
-  declare type Theme = { [key: string]: mixed };
+
+  declare type Theme = {[key: string]: mixed};
   declare type ThemeProviderProps = {
     theme: ((outerTheme: Theme) => void) | Theme
   };
 
   declare class ThemeProvider extends React$Component {
-    props: ThemeProviderProps
+    props: ThemeProviderProps;
   }
 
   declare module.exports: {
-    (baseComponent: React$Component<*, *, *>): StyledComponent,
-    injectGlobal: (
-      strings: Array<string>,
-      ...interpolations: Array<Interpolation>
-    ) => void,
-    css: (
-      strings: Array<string>,
-      ...interpolations: Array<Interpolation>
-    ) => Array<Interpolation>,
-    keyframes: (nameGenerator: NameGenerator) => (
-      strings: Array<string>,
-      ...interpolations: Array<Interpolation>
-    ) => string,
+    injectGlobal: (strings: Array<string>, ...interpolations: Array<Interpolation>) => void,
+    css: (strings: Array<string>, ...interpolations: Array<Interpolation>) => Array<Interpolation>,
+    keyframes: (nameGenerator: NameGenerator) => (strings: Array<string>, ...interpolations: Array<Interpolation>) => string,
     withTheme: () => React$Component<*, ThemeProviderProps, *>,
     ThemeProvider: typeof ThemeProvider,
+    (baseComponent: React$Component<*, * , *>): StyledComponent,
     a: StyledComponent,
     abbr: StyledComponent,
     address: StyledComponent,
@@ -173,6 +162,6 @@ declare module "styled-components" {
     stop: StyledComponent,
     svg: StyledComponent,
     text: StyledComponent,
-    tspan: StyledComponent
+    tspan: StyledComponent,
   };
 }
