@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
-import Song from "./Song";
+import SongSheet from "./SongSheet";
 
 const Wrapper = styled.section`
   display: flex;
@@ -17,7 +17,7 @@ const App = () => (
   <Router>
     <div>
       <Route exact path="/" component={Hi} />
-      <Route path="/song/:id" component={Song} />
+      <Route path="/song/:id" component={SongSheet} />
     </div>
   </Router>
 );

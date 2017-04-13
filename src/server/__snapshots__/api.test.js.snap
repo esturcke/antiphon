@@ -7,7 +7,7 @@ exports[`test 200 for song list 1`] = `
 Array [
   Object {
     "name": "test-song",
-    "uri": "/song/test-song",
+    "uri": "http://localhost:3001/song/test-song",
   },
 ]
 `;
