@@ -35,7 +35,10 @@ export default class SongSheet extends React.Component {
     fetch(uri(this.props.match.params.id))
       .then(result => result.text())
       .then(raw => fromString(raw))
-      .then(song => this.setState({ song: { status: "ready", value: song } }));
+      .then(song => this.setState({ song: { status: "ready", value: song } }))
+      .catch((error: ErrorState) =>
+        this.setState({ song: { status: "error", error: "error" } })
+      );
   };
 
   render = () =>
