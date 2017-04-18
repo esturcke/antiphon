@@ -50,7 +50,38 @@ C           Am           F           G
 This is not a real song, but we use it anyway
 C           Am           F           G
 This is not a real song, but we use it anyway",
-  "stanzas": Array [],
+  "stanzas": Array [
+    Object {
+      "id": undefined,
+      "lines": Array [],
+      "type": "verse",
+    },
+    Object {
+      "id": 1,
+      "lines": Array [],
+      "type": "verse",
+    },
+    Object {
+      "id": undefined,
+      "lines": Array [],
+      "type": "chorus",
+    },
+    Object {
+      "id": 2,
+      "lines": Array [],
+      "type": "verse",
+    },
+    Object {
+      "id": undefined,
+      "lines": Array [],
+      "type": "chorus",
+    },
+    Object {
+      "id": undefined,
+      "lines": Array [],
+      "type": "bridge",
+    },
+  ],
   "title": "This is the title",
 }
 `;

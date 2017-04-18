@@ -1,5 +1,5 @@
 // @flow
-import type { Song, MetaData, Stanza } from "./types"
+import type { Song, MetaData, Stanza, StanzaType } from "./types"
 
 const parseTitleParagraph = (
   paragraph: string[]
@@ -7,6 +7,34 @@ const parseTitleParagraph = (
   title: paragraph[0] === undefined ? "" : paragraph[0],
   artists: paragraph[1] === undefined ? [] : paragraph[1].split(/\s*,\s*/)
 })
+
+const isStanzaType = (line: string): boolean =>
+  /^\s*(verse|chorus|pre-chorus|bridge)(?:\s+\d+)?\s*$/i.test(line)
+
+const normalizeType = (type: string): StanzaType => {
+  switch (type.toLowerCase()) {
+    case "bridge":
+      return "bridge"
+    case "pre-chorus":
+      return "pre-chorus"
+    case "chorus":
+      return "chorus"
+    default:
+      return "verse"
+  }
+}
+
+export const parseStanzaType = (
+  line: string
+): { type: StanzaType, id?: number } => {
+  const [_, type, id] = line.match(/^\s*(.*?)(?:\s+(\d+))?\s*$/i) || []
+  return {
+    type: normalizeType(type),
+    id: id === undefined ? undefined : parseInt(id, 10)
+  }
+}
+
+const isChordLine = (line: string): boolean => true
 
 export const isCapo = (paragraph?: string[]): boolean =>
   paragraph !== undefined &&
@@ -29,13 +57,23 @@ const splitMetaData = (raw: string): { meta: MetaData, body: string[][] } => {
   }
 }
 
-const stanzas = (lines: string[][]): Stanza[] => []
+const stanza = (paragraph: string[]): Stanza => {
+  const { type, id } = isStanzaType(paragraph[0])
+    ? parseStanzaType(paragraph.shift())
+    : { type: "verse", id: undefined }
+
+  return {
+    type,
+    id,
+    lines: []
+  }
+}
 
 export default (raw: string): Song => {
   const { meta, body } = splitMetaData(raw)
   return {
     raw,
     ...meta,
-    stanzas: stanzas(body)
+    stanzas: body.map(stanza)
   }
 }

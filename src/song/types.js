@@ -8,8 +8,11 @@ export type Segment = {
 
 export type Line = Segment[]
 
+export type StanzaType = "verse" | "pre-chorus" | "chorus" | "bridge"
+
 export type Stanza = {
-  type: "verse" | "pre-chorus" | "chorus" | "bridge",
+  type: StanzaType,
+  id?: number,
   lines: Line[]
 }
 
