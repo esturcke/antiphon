@@ -6,8 +6,28 @@ exports[`test 200 for known file 1`] = `
 exports[`test 200 for song list 1`] = `
 Array [
   Object {
+    "name": "empty",
+    "uri": "http://localhost:3001/song/empty",
+  },
+  Object {
+    "name": "simple-song",
+    "uri": "http://localhost:3001/song/simple-song",
+  },
+  Object {
+    "name": "single-line",
+    "uri": "http://localhost:3001/song/single-line",
+  },
+  Object {
     "name": "test-song",
     "uri": "http://localhost:3001/song/test-song",
+  },
+  Object {
+    "name": "title-and-artist",
+    "uri": "http://localhost:3001/song/title-and-artist",
+  },
+  Object {
+    "name": "with-capo",
+    "uri": "http://localhost:3001/song/with-capo",
   },
 ]
 `;

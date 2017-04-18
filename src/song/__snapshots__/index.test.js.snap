@@ -1,0 +1,81 @@
+exports[`test parses ./test-data/songs/empty 1`] = `
+Object {
+  "artists": Array [],
+  "capo": 0,
+  "raw": "",
+  "stanzas": Array [],
+  "title": "",
+}
+`;
+
+exports[`test parses ./test-data/songs/simple-song 1`] = `
+Object {
+  "artists": Array [
+    "And an artist",
+  ],
+  "capo": 1,
+  "raw": "This is the title
+And an artist
+
+Capo 1
+
+Intro
+C           Am           F           G
+This is not a real song, but we use it anyway
+C           Am           F           G
+This is not a real song, but we use it anyway
+
+Verse 1
+C           Am           F           G
+This is not a real song, but we use it anyway
+C           Am           F           G
+This is not a real song, but we use it anyway
+
+Chorus
+C           Am           F           G
+This is not a real song, but we use it anyway
+C           Am           F           G
+This is not a real song, but we use it anyway
+
+Verse 2
+C           Am           F           G
+This is not a real song, but we use it anyway
+C           Am           F           G
+This is not a real song, but we use it anyway
+
+Chorus
+
+Bridge
+C           Am           F           G
+This is not a real song, but we use it anyway
+C           Am           F           G
+This is not a real song, but we use it anyway",
+  "stanzas": Array [],
+  "title": "This is the title",
+}
+`;
+
+exports[`test parses ./test-data/songs/single-line 1`] = `
+Object {
+  "artists": Array [],
+  "capo": 0,
+  "raw": "This is the title",
+  "stanzas": Array [],
+  "title": "This is the title",
+}
+`;
+
+exports[`test parses ./test-data/songs/with-capo 1`] = `
+Object {
+  "artists": Array [
+    "The artist",
+  ],
+  "capo": 3,
+  "raw": "The title
+The artist
+
+Capo 3",
+  "stanzas": Array [],
+  "title": "The title",
+}
+`;

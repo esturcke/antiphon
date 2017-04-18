@@ -9,17 +9,18 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
     "express": "^4.15.2",
-    "flow-bin": "^0.44.0",
+    "flow-bin": "^0.44.2",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
     "lodash": "^4.17.4",
-    "minireset.css": "^0.0.2",
+    "minireset.css": "^0.0.3",
+    "mz": "^2.6.0",
     "nodemon": "^1.11.0",
-    "prettier": "^1.0.2",
+    "prettier": "^1.1.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
-    "styled-components": "^1.4.4",
+    "styled-components": "^1.4.5",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
@@ -35,11 +36,11 @@
     "precommit": "lint-staged",
     "flow": "flow",
     "server": "nodemon src/server --exec babel-node --presets flow,es2015,stage-2",
-    "prettier": "prettier --write 'src/**/*.js'"
+    "prettier": "prettier --write --no-semi 'src/**/*.js'"
   },
   "lint-staged": {
     "src/**/*.js": [
-      "prettier --write",
+      "prettier --write --no-semi",
       "git add"
     ]
   }
