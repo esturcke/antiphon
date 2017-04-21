@@ -19,3 +19,5 @@ yarn-error.log*
 # songs directory
 /songs
 
+# VS Code settings
+/.vscode
