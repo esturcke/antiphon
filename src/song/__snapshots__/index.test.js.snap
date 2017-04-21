@@ -53,22 +53,35 @@ This is not a real song, but we use it anyway",
   "stanzas": Array [
     Object {
       "id": undefined,
-      "lines": Array [],
+      "lines": Array [
+        Array [],
+        Array [],
+        Array [],
+      ],
       "type": "verse",
     },
     Object {
       "id": 1,
-      "lines": Array [],
+      "lines": Array [
+        Array [],
+        Array [],
+      ],
       "type": "verse",
     },
     Object {
       "id": undefined,
-      "lines": Array [],
+      "lines": Array [
+        Array [],
+        Array [],
+      ],
       "type": "chorus",
     },
     Object {
       "id": 2,
-      "lines": Array [],
+      "lines": Array [
+        Array [],
+        Array [],
+      ],
       "type": "verse",
     },
     Object {
@@ -78,7 +91,10 @@ This is not a real song, but we use it anyway",
     },
     Object {
       "id": undefined,
-      "lines": Array [],
+      "lines": Array [
+        Array [],
+        Array [],
+      ],
       "type": "bridge",
     },
   ],

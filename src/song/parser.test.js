@@ -1,5 +1,5 @@
 // @flow
-import { isCapo, parseStanzaType } from "./parser"
+import { isCapo, parseStanzaType, chordBreakPoints } from "./parser"
 ;[
   ["undefined", undefined],
   ["empty array", []],
@@ -29,3 +29,8 @@ import { isCapo, parseStanzaType } from "./parser"
   test(`can extract type from ${label}`, () =>
     expect(parseStanzaType(line)).toEqual(parsed))
 )
+/*
+;[
+  ["A B   C", "", [0, 2, 5]]
+].forEach(([label, line, breakpoints]) => test(`can find breakpoints for`, () => expect(chordBreakPoints(line)).toEqual(breakpoints))
+*/

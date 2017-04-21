@@ -1,5 +1,5 @@
 // @flow
-import type { Song, MetaData, Stanza, StanzaType } from "./types"
+import type { Song, MetaData, Stanza, StanzaType, Line } from "./types"
 
 const parseTitleParagraph = (
   paragraph: string[]
@@ -36,6 +36,17 @@ export const parseStanzaType = (
 
 const isChordLine = (line: string): boolean => true
 
+export const chordBreakPoints = (line: string): number[] => {
+  const positions = [0]
+
+  return positions
+}
+
+const parseWithChords = (chords: string, text: string): Line => {
+  const line = []
+  return line
+}
+
 export const isCapo = (paragraph?: string[]): boolean =>
   paragraph !== undefined &&
   paragraph.length == 1 &&
@@ -62,10 +73,19 @@ const stanza = (paragraph: string[]): Stanza => {
     ? parseStanzaType(paragraph.shift())
     : { type: "verse", id: undefined }
 
+  const lines = []
+  while (paragraph.length) {
+    lines.push(
+      isChordLine(paragraph[0])
+        ? parseWithChords(paragraph.shift(), paragraph.shift())
+        : [{ chords: [], text: paragraph.shift() }]
+    )
+  }
+
   return {
     type,
     id,
-    lines: []
+    lines
   }
 }
 
