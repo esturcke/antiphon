@@ -1,3 +1,3 @@
 # Antiphon
 
-A guitar song book.
+A guitar song book made with React.
