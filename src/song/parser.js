@@ -49,7 +49,7 @@ const parseWithChords = (chords: string, text: string): Line => {
 
 export const isCapo = (paragraph?: string[]): boolean =>
   paragraph !== undefined &&
-  paragraph.length == 1 &&
+  paragraph.length === 1 &&
   /^\s*capo\s+\d+\s*$/i.test(paragraph[0])
 
 const parseCapo = (line: string): number => {
