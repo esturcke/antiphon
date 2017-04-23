@@ -16,7 +16,7 @@
     "minireset.css": "^0.0.3",
     "mz": "^2.6.0",
     "nodemon": "^1.11.0",
-    "prettier": "^1.1.0",
+    "prettier": "^1.2.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1",
@@ -24,7 +24,7 @@
     "supertest": "^3.0.0"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "^0.10.0-alpha"
   },
   "scripts": {
     "dev": "yarn start & yarn server",
