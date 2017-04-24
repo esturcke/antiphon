@@ -2,6 +2,7 @@
 import React from "react"
 import type { ContextRouter } from "react-router-dom"
 import includes from "lodash/includes"
+import { FormattedMessage } from "react-intl"
 import { uri } from "./server/util"
 import type { Song } from "./song/types"
 import { fromString } from "./song"
@@ -40,6 +41,6 @@ export default class SongSheet extends React.Component {
       : this.state.song.status === "loading"
           ? <div>Loading</div>
           : <div className={styles.wrapper}>
-              Hi! {this.props.match.params.id}{this.state.song.value.raw}
+              <FormattedMessage id="hi" />
             </div>)
 }
