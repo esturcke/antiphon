@@ -1,17 +1,10 @@
 // @flow
 import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom"
-import styled from "styled-components"
 import SongSheet from "./SongSheet"
+import styles from "./App.css"
 
-const Wrapper = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`
-
-const Hi = () => <Wrapper>Hi!</Wrapper>
+const Hi = () => <div className={styles.wrapper}>Hi!</div>
 
 const App = () => (
   <Router>

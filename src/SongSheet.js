@@ -1,18 +1,11 @@
 // @flow
 import React from "react"
-import styled from "styled-components"
 import type { ContextRouter } from "react-router-dom"
 import includes from "lodash/includes"
 import { uri } from "./server/util"
 import type { Song } from "./song/types"
 import { fromString } from "./song"
-
-const Wrapper = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`
+import styles from "./SongSheet.css"
 
 type ErrorState = "not-found" | "error"
 type SongState =
@@ -46,7 +39,7 @@ export default class SongSheet extends React.Component {
       ? <div>Error</div>
       : this.state.song.status === "loading"
           ? <div>Loading</div>
-          : <Wrapper>
+          : <div className={styles.wrapper}>
               Hi! {this.props.match.params.id}{this.state.song.value.raw}
-            </Wrapper>)
+            </div>)
 }
